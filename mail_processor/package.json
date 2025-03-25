@@ -1,0 +1,20 @@
+{
+  "name": "newzet_lambda",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AWS Lambda function for email processing",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "test": "node --experimental-modules index.mjs",
+    "zip": "zip -r lambda-function.zip . -x 'node_modules/aws-sdk/*' '.git/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.723.0",
+    "dotenv": "^16.4.7",
+    "mailparser": "^3.7.2"
+  }
+}
