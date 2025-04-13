@@ -57,13 +57,13 @@ def lambda_handler(event, context):
             'Type': 'forward',
             'ForwardConfig': {
                 'TargetGroups': [
-                    {'TargetGroupArn': live_tg, 'Weight': 100},
-                    {'TargetGroupArn': canary_tg, 'Weight': 0}
+                    {'TargetGroupArn': live_tg, 'Weight': 60},
+                    {'TargetGroupArn': canary_tg, 'Weight': 40}
                 ]
             }
         }]
     )
-    print("Traffic switched to Live (100%)")
+    print("Traffic switched to Live (60%), Canary (40%)")
 
     # Canary EC2 종료
     ec2.stop_instances(InstanceIds=[canary_ec2_id])
