@@ -9,8 +9,9 @@ export async function parseEmail(emailContent) {
     const toDomain = parsed.to?.value[0].address;
     const maillingList = parsed.headers.get("list")?.id?.name ?? null;
     const htmlContent = parsed.html || "No HTML content";
+    const title = parsed.title || "No title";
 
-    return { fromName, fromDomain, toDomain, maillingList, htmlContent };
+    return { fromName, fromDomain, toDomain, maillingList, htmlContent, title };
   } catch (error) {
     throw new Error(`Failed to parse email: ${error.message}`);
   }
