@@ -1,7 +1,7 @@
 import https from "https";
 
-const SERVER_URL = "iryfjrxudkoyigzzeplp.supabase.co";
-const MAIL_RECEIVE_HOOK = "/functions/v1/mail_receive";
+const SERVER_URL = "http://34.64.51.138:8080";
+const MAIL_RECEIVE_HOOK = "/functions/v1/mail";
 
 export async function sendMetadataToApiServer(metadata) {
   return new Promise((resolve, reject) => {
