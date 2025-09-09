@@ -29,7 +29,7 @@ export const handler = async (event) => {
         toDomain: parsed.toDomain,
         mailingList: parsed.maillingList,
         s3Link,
-        title: parsed.title,
+        title: Buffer.from(parsed.title, 'utf8').toString('base64'),
       });
     } catch (error) {
       logError("Failed to process message", { error: error.message });
